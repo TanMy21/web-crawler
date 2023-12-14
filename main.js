@@ -1,6 +1,7 @@
 const process = require("process");
+const { crawlPage } = require("./crawl");
 
-function main() {
+async function main() {
   const args = process.argv.slice(2); // Removes the first two elements
 
   if (args.length < 1) {
@@ -15,6 +16,8 @@ function main() {
 
   // Your CLI logic here for the case of exactly 1 argument
   console.log("Crawler starting at: ", baseURL);
+
+  await crawlPage(baseURL);
 }
 
 main();
