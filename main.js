@@ -17,7 +17,9 @@ async function main() {
   // Your CLI logic here for the case of exactly 1 argument
   console.log("Crawler starting at: ", baseURL);
 
-  await crawlPage(baseURL);
+  const pages = await crawlPage(baseURL, baseURL, {});
+
+  console.log(pages);
 }
 
 main();
